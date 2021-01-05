@@ -1,0 +1,14 @@
+div.no-padding {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+//Main wrapper
+.main-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    .row:first-child {
+        flex: 1;
+    }
+}
