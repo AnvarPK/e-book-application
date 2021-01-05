@@ -1,11 +1,17 @@
 import './App.scss';
+import { useEffect} from 'react';
+import {connect} from 'react-redux';
+import { loadPages } from './redux/actions/pages';
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import { Container, Row, Col } from 'react-bootstrap';
 import Footer from './components/footer';
 import Home from './pages/home';
 import BookAdd from "./pages/books/add";
 
-function App() {
+function App({dispatch}) {
+  useEffect(()=>{
+    dispatch(loadPages());
+  },[])
   return (
     <Router>
       <Container fluid className=" main-wrapper ">
@@ -26,4 +32,5 @@ function App() {
   );
 }
 
-export default App;
+
+export default connect()(App);
